@@ -1,0 +1,283 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+.App-header h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.5rem;
+}
+
+.App-header p {
+  margin: 0;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+
+.upload-section {
+  grid-column: 1 / -1;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.upload-section h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.upload-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#file-input {
+  padding: 10px;
+  border: 2px dashed #ddd;
+  border-radius: 4px;
+  background: #fafafa;
+  cursor: pointer;
+  width: 100%;
+  max-width: 400px;
+}
+
+#file-input:hover {
+  border-color: #007bff;
+}
+
+.file-info {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 4px;
+  border-left: 4px solid #007bff;
+  text-align: left;
+  width: 100%;
+  max-width: 400px;
+}
+
+.file-info p {
+  margin: 5px 0;
+}
+
+.upload-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.upload-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.upload-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #dc3545;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.documents-section {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.documents-section h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.documents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.document-item {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: left;
+}
+
+.document-item:hover {
+  border-color: #007bff;
+  box-shadow: 0 2px 8px rgba(0,123,255,0.1);
+}
+
+.document-item.selected {
+  border-color: #007bff;
+  background-color: #f8f9ff;
+}
+
+.document-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.document-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status.uploaded {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status.ocr_complete {
+  background-color: #cce5ff;
+  color: #004085;
+}
+
+.status.classification_complete {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status.completed {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.status.failed {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.document-meta p {
+  margin: 5px 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.document-details {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.document-details h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.details-content {
+  text-align: left;
+}
+
+.detail-section {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.detail-section:last-child {
+  border-bottom: none;
+}
+
+.detail-section h3 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.detail-section p {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.ocr-results {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  padding: 15px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.summary-text {
+  line-height: 1.6;
+  color: #333;
+}
+
+.detail-section.error {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+.detail-section.error h3 {
+  color: #721c24;
+}
+
+.detail-section.error p {
+  color: #721c24;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+  
+  .App-header h1 {
+    font-size: 2rem;
+  }
+  
+  .App-header p {
+    font-size: 1rem;
+  }
+}
